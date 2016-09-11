@@ -1,0 +1,85 @@
+#slider{
+    width: 960px;
+    height: 500px;
+    position: relative;
+    margin: 50px auto;
+}
+#slider:hover #next{
+    opacity: 1;
+    transition: all .6s ease-out;
+    -webkit-transition: all .6s ease-out;
+}
+
+#slider:hover #prev{
+    opacity: 1;
+    transition: all .6s ease-out;
+    -webkit-transition: all .6s ease-out;
+}
+
+
+#slider .slides{
+    width: 960px;
+    height: 500px;
+    position: absolute;
+    overflow: hidden;
+}
+
+
+#slider .slide{
+    width: 300px; /*set the width or max-width*/
+    height: auto; /*this makes sure to maintain the aspect ratio*/
+}
+
+#next {
+    text-align: center;
+    line-height: 50px;
+    position: absolute;
+    z-index: 99;
+    cursor: pointer;
+    top: 250px;
+    right: 0;
+    width: 50px; height: 50px;
+    background-color: grey;
+    opacity: 0.25;
+}
+
+#prev {
+    text-align: center;
+    line-height: 50px;
+    position: absolute;
+    z-index: 99;
+    cursor: pointer;
+    top: 250px;
+    left: 0;
+    width: 50px; height: 50px;
+    background-color: grey;
+    opacity: 0.25;
+}
+
+#header{
+    text-align: center;
+    font-family: "Calibri";
+    border-bottom: 2px solid grey;
+    margin-right: 350px;
+    margin-left: 350px;
+}
+
+.container2 header h2{
+    text-align: center;
+    font-family: "Calibri";
+    
+}
+
+.s1{
+    margin-right: 20px;
+    margin-left: 20px;
+    border-bottom: 1px solid grey;
+}
+
+.search{
+    text-align: center;
+    background-color: red;
+    margin-right: 500px;
+    margin-left: 500px;
+
+}

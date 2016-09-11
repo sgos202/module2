@@ -79,23 +79,7 @@ a2a_config.linkname = "Nutrional information ";
     </div>
 </div>
 
-<div id="map_auckland" style="width:100%;height:500px"></div>
 
-<script>
-function myMap() {
-  var mapCanvas = document.getElementById("map_auckland");
-  var center = new google.maps.LatLng(-36.8485, 174.7633)
-  var mapProc = {center: center, zoom: 5};
-  var map_auckland = new google.maps.Map(mapCanvas, mapProc);
-  var marker = new google.maps.Marker({
-      position: center,
-      animation: google.maps.Animation.BOUNCE
-  });
-  marker.setMap(map_auckland)
-}
-</script>
-
-<script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
 
 </body>
 </html>

@@ -1,106 +1,32 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <link rel = "stylesheet" href ="css.css">
-    <script type="text/javascript" src= "data.js"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
-    <script type="text/javascript" src="http://malsup.github.com/jquery.cycle.all.js"></script>
-    <script type ="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCo18FDmAY6w3yzHpFQMH3gitxsZeCH-4&callback=initMap"></script>
-
-    <script type="text/javascript">
-    $(document).ready(function() {
-        $('.slides').cycle({
-            fx: 'scrollHorz', // scrolling to the left
-            next: '#next',
-            prev: '#prev',
-        });
-    });
-</script>
-	<title>Information</title>
-
-</head>
-<body>
-    
-    <!-- AddToAny BEGIN -->
-<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
-<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
-<a class="a2a_button_facebook"></a>
-<a class="a2a_button_twitter"></a>
-<a class="a2a_button_google_plus"></a>
-</div>
-<script>
-var a2a_config = a2a_config || {};
-a2a_config.linkname = "Nutrional information ";
-</script>
-<script async src="https://static.addtoany.com/menu/page.js"></script>
-<!-- AddToAny END -->
-
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7&appId=597367933779522";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-  
-
-    <div class="container">
-        <div id= "header">
-            <h1>Information Identifier</h1>
-        </div>
-
-        <div id ="slider">
-            <div id = "next">&rang;</div>
-            <div id = "prev">&lang;</div>  
-
-                <ul class="slides">
-                    <li class="slide"><img src="x1.jpg"></li>
-                    <li class="slide"><img src="x2.jpg"></li>
-                    <li class="slide"><img src="x3.jpg"></li>
-                    <li class="slide"><img src="x4.jpg"></li>
-                </ul>
-        </div>
-    </div>
-    		<div class ="search">
-			<table id="search_option">
-				<tr>
-					<td>
-						<input type = "text" id = "search_bar" placeholder = "Please Search Here.." style = "width:500%" onkeyup = "searchoption(this.value);" >
-					</td>				
-				</tr>
-			</table>
-		    </div>
-
-<div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a></div>
-
-<div class="container2">
-    <div id="header">
-    <h2 class = "s1"> About us</h2>
-    <h4 class = "s2">We are a small company based in the city of sails, Auckland, New Zealand. </h4>
-    </div>
-</div>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
     <style>
-    html, body, #map-canvas{height:100%; margin:0; padding:0;}
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
     </style>
-<script>
-    function initialize(){
-        var mapOptions = {
-            zoom: 8,
-            center: new google.maps.LatLng(-34.397, 150.644)
-        };
-    var map = new google.maps.Map(document.getElementById('map-canvas'),
-    mapOptions);
-    }
-
-    function loadScript(){
-        var script = document.createElement('script');
-        script.type ='text/javascript';;
-        script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&' + 'callback=initialize';
-        document.body.appendChild(script);
-    }
-window.onload = loadScript;
-</script>
-<div id="map-canvas"></div>
-</body>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 8
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCo18FDmAY6w3yzHpFQMH3gitxsZeCH-4&callback=initMap"
+    async defer></script>
+  </body>
 </html>

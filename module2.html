@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html >
+<html>
 <head>
     <link rel = "stylesheet" href ="css.css">
     <script type="text/javascript" src= "data.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
     <script type="text/javascript" src="http://malsup.github.com/jquery.cycle.all.js"></script>
     <script type ="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCo18FDmAY6w3yzHpFQMH3gitxsZeCH-4&callback=initMap"></script>
-	
+
     <script type="text/javascript">
     $(document).ready(function() {
         $('.slides').cycle({
@@ -19,7 +19,7 @@
 	<title>Information</title>
 
 </head>
-<body background="background.jpg">
+<body>
     
     <!-- AddToAny BEGIN -->
 <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
@@ -82,12 +82,12 @@ a2a_config.linkname = "Nutrional information ";
 </div>
     <style>
       html, body {
-        height: 100%;
+        height: 90%;
         margin: 0;
         padding: 0;
       }
       #map {
-        height: 100%;
+        height: 90%;
       }
     </style>
 
@@ -96,10 +96,17 @@ a2a_config.linkname = "Nutrional information ";
       var map;
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 8
+          center: {lat: -41.2865, lng: 174.7762},
+          zoom: 5
         });
-      }
+      
+        var marker = new google.maps.Marker({
+          position: {lat: -36.8485, lng: 174.7633},
+          map: map,
+          title: 'Hello World!',
+          animation: google.maps.Animation.BOUNCE
+        });
+        }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCo18FDmAY6w3yzHpFQMH3gitxsZeCH-4&callback=initMap"
     async defer></script>

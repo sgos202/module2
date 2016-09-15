@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
     <link rel = "stylesheet" href ="css.css">
     <script type="text/javascript" src= "data.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
     <script type="text/javascript" src="http://malsup.github.com/jquery.cycle.all.js"></script>
     <script type ="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCo18FDmAY6w3yzHpFQMH3gitxsZeCH-4&callback=initMap"></script>
     <link rel="stylesheet" href="sweetalert.css">
+    <script src="sweetalert.min.js"></script> 
 
     <script type="text/javascript">
     $(document).ready(function() {
@@ -17,24 +19,15 @@
         });
     });
 </script>
-	<title>Information</title>
+	<title>Information Identifier</title>
 
 </head>
+
 <body>
+    <div class ="w3-container w3-teal">
+    <div class="fb-share-button" data-href="http://module2-sg.azurewebsites.net" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a></div>
     
-    <!-- AddToAny BEGIN -->
-<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
-<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
-<a class="a2a_button_facebook"></a>
-<a class="a2a_button_twitter"></a>
-<a class="a2a_button_google_plus"></a>
-</div>
-<script>
-var a2a_config = a2a_config || {};
-a2a_config.linkname = "Nutrional information ";
-</script>
-<script async src="https://static.addtoany.com/menu/page.js"></script>
-<!-- AddToAny END -->
+
 
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
@@ -48,7 +41,8 @@ a2a_config.linkname = "Nutrional information ";
 
     <div class="container">
         <div id= "header">
-            <h1>Information Identifier</h1>
+            <h1 id="h1">Information Identifier</h1>
+            
         </div>
 
         <div id ="slider">
@@ -63,33 +57,40 @@ a2a_config.linkname = "Nutrional information ";
                 </ul>
         </div>
     </div>
+</div>
     		<div class ="search">
-			<table id="search_option">
-				<tr>
-					<td>
-						<input type = "text" id="search_bar" placeholder = "Please search for your desired food.."/>
+						<input type = "text" id="search_bar" placeholder = "Please search for your desired food.." style="width: 600px;" /><validation();>
                         <button id = "click" onclick="api();">Search</button>
-
-                        <script src="sweetalert.min.js"></script> 
-                        <script >
-                            function validation(){
-                                var user_input = document.getElementById('search_bar').value;
-                                if (user_input == []){
-                                    swal("Oops...", "Something went wrong!", "error");
-                                }
-                            }
-                        </script>
-					</td>				
-				</tr>
-			</table>
 		    </div>
-            <ul id = 'apiData'>Nutritional Information Table</ul>
+            <br>
+            <ol id = 'apiData'>Nutritional Information Table</ol>
 
-<div class="fb-share-button" data-href="http://module2-sg.azurewebsites.net" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a></div>
+    <table id="NutTable"">
+        <thead>
+            <tr>
+                <th>Brand Name</th>
+                <th>Item Name</th>
+                <th>Carbohydrates (g)</th>
+                <th>Total Calories</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <!-- information obtained from the api call to fill data into the table
+                <th>Brand Name</th>
+                <th>Item Name</th>
+                <th>Carbohydrates (g)</th>
+                <th>Total Calories</th>
+                -->
+
+        </tbody>
+    </table>
 
 <div class="container2">
     <div id="header">
     <h2 class = "s1"> About us</h2>
+    <br>    
     <h4 class = "s2">We are a small company based in the city of sails, Auckland, New Zealand. </h4>
     </div>
 </div>
@@ -123,5 +124,6 @@ a2a_config.linkname = "Nutrional information ";
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCo18FDmAY6w3yzHpFQMH3gitxsZeCH-4&callback=initMap"
     async defer></script>
+    
 </body>
 </html>

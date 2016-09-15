@@ -2,19 +2,17 @@
 
 function slidecontrol() {
 
-    //settings for slider
+    //settings for my slider
     var width = 720;
     var animationSpeed = 1000;
     var pause = 3000;
     var currentSlide = 1;
 
-    //cache DOM elements
+    //caching the DOM elements 
     var $slider = $('#slider');
     var $slideContainer = $('.slides', $slider);
     var $slides = $('.slide', $slider);
-
     var interval;
-
     function startSlider() {
         interval = setInterval(function() {
             $slideContainer.animate({'margin-left': '-='+width}, animationSpeed, function() {
@@ -38,20 +36,18 @@ function slidecontrol() {
 
 };
 
-function api(){
+function api(){ //makes dynamic call to get the API data
 	var search_input = document.getElementById("search_bar").value;
     var new_list = document.getElementById('apiData')
     var count;
-    
-
-    
+      
 	$(function(){
 		var $apiData = $('#apiData');
-        $('#NutTable tbody').empty();
+        $('#NutTable tbody').empty(); //clears the list for next search
 		if (search_input == []){
-			swal("Oops...", "Something went wrong!", "error");
+			swal("Oops...", "Please enter a valid search object", "error");
             
-            
+     
 		}
 		else{
 			$.ajax({
@@ -60,15 +56,12 @@ function api(){
             
 			success: function(apiData) {
                 
-                for(count = 0; count <20; count ++){
+                for(count = 0; count <20; count ++){ //gets 20 results back from API call 
                     console.log("success1", apiData);
-
-
+                    
                     $('#NutTable tbody').append('<tr> <td>' + apiData.hits[count].fields.brand_name + '</td> <td>' + apiData.hits[count].fields.item_name + '</td> <td>'
                      + apiData.hits[count].fields.nf_total_carbohydrate + '</td> <td>' + apiData.hits[count].fields.nf_protein + '</td> <td>' 
                        + apiData.hits[count].fields.nf_sugars + '</td> <td>' + apiData.hits[count].fields.nf_calories + '</td> </tr>');
-
-                new_list = [];
                 }
                 
 

@@ -47,7 +47,7 @@ function api(){
     
 	$(function(){
 		var $apiData = $('#apiData');
-        $apiData.empty();
+        $('#NutTable tbody').empty();
 		if (search_input == []){
 			swal("Oops...", "Something went wrong!", "error");
             

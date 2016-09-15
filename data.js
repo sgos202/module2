@@ -63,8 +63,10 @@ function api(){
                 for(count = 0; count <20; count ++){
                     console.log("success1", apiData);
 
+
                     $('#NutTable tbody').append('<tr> <td>' + apiData.hits[count].fields.brand_name + '</td> <td>' + apiData.hits[count].fields.item_name + '</td> <td>'
-                      + apiData.hits[count].fields.nf_total_carbohydrate + '</td> <td>' + apiData.hits[count].fields.nf_calories + '</td> </tr>');
+                     + apiData.hits[count].fields.nf_total_carbohydrate + '</td> <td>' + apiData.hits[count].fields.nf_protein + '</td> <td>' 
+                       + apiData.hits[count].fields.nf_sugars + '</td> <td>' + apiData.hits[count].fields.nf_calories + '</td> </tr>');
 
                 new_list = [];
                 }

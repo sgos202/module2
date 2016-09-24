@@ -61,9 +61,10 @@
 </div>
     		<div class ="search">
 						<input type = "text" id="search_bar" placeholder = "Please search for your desired food.." style="width: 600px;" /><validation();>
-                        <button id = "click" onclick="api();">Search</button>
+                        <button id = "click" onclick="api(document.getElementById('search_bar').value)">Search</button>
 		    </div>
             <br>
+            <button onclick="myFunction()">Click Me</button>
             <ol id = 'apiData'>Nutritional Information Table</ol>
 
     <table id="NutTable"">
